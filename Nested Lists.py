@@ -9,7 +9,7 @@ if __name__ == '__main__':
         scoresheet.append(score)
 
     # Make a set so there are no duplicate scores
-    # Obtain the second lowest grade (index 1) descending
+    # Obtain the second lowest grade (index 1)
     x = sorted(set(scoresheet))[1]
 
     for name, score in sorted(marksheet):
