@@ -1,2 +1,2 @@
 # hackerRank
-Hub for my solutions to HackerRank problems (Python)
+Hub for my solutions to HackerRank and codewars problems (Python)
