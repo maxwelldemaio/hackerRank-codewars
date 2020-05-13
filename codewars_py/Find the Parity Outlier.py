@@ -25,5 +25,5 @@ def find_outlier(integers):
     # Look for odd number
     else:
         for y in integers:
-            if y % 2 ==1:
+            if y % 2 == 1:
                 return y
