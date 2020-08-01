@@ -24,13 +24,41 @@ The menu items are fairly simple, there is no overlap in the names of the items:
 8. Coke
 """
 
+def insert_space(string, integer):
+    return string[0:integer] + ' ' + string[integer:]
+
 def get_order(order):
     menu = ["Burger", "Fries", "Chicken", "Pizza", "Sandwich", "Onionrings", "Milkshake", "Coke"]
-    indexFound = order.find(menu[-2].lower())
-    if index == 0:
-        pass
-    # Insert a space 
-    # TODO If there are multiple of the order
-    else:
+
+    # For each item in the menu, go over the whole order and place spaces after
+    for item in menu:
+        # Insert a space after the first occurence of the item
+        itemLen = len(item)
+        startLoc = order.find(item.lower())
+        endLoc = startLoc + itemLen
+        # Item found
+        if startLoc != -1:
+            order = insert_space(order, endLoc)
+            
+        # Find next occurences of menu items if any and place spaces
+        while (order.find(item.lower(), endLoc, len(order) - 1)) != -1:
+            startLoc = order.find(item.lower(), endLoc, len(order) - 1)
+            endLoc = startLoc + itemLen
+            order = insert_space(order, endLoc)
+    
+    orderList = order.title().rstrip().split()
+    finalOrder = []
+
+    # Append index locations to final order
+    for item in orderList:
+        finalOrder.append(menu.index(item))
+        
+    # Sort in ascending order
+    finalOrder.sort()
+    # Replace them with the strings and join
+    for x in range(0, len(finalOrder)):
+        finalOrder[x] = menu[finalOrder[x]]
+    return " ".join(finalOrder)
+
 
 print(get_order("milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza"))
