@@ -72,17 +72,45 @@ function recycle(array) {
 
     // Loop over items to be recycled
     for (var x = 0; x < array.length; x++) {
-        console.log(array[x]);
+      // Sort based on first material
+      switch (array[x].material) {
+        case "paper":
+          paper.push(array[x].type);
+          break;
+        case "glass":
+          glass.push(array[x].type);
+          break;
+        case "organic":
+          organic.push(array[x].type);
+          break;
+        case "plastic":
+          plastic.push(array[x].type);
+      }
+        // If there is a second material, sort based on second material
+      if (array[x].secondMaterial) {
+        switch (array[x].secondMaterial) {
+          case "paper":
+            paper.push(array[x].type);
+            break;
+          case "glass":
+            glass.push(array[x].type);
+            break;
+          case "organic":
+            organic.push(array[x].type);
+            break;
+          case "plastic":
+            plastic.push(array[x].type);
+        }
+      }
     }
-
-    // TODO
+  
     // Put bins in one large bin to be recycled
-    return
+    return [paper, glass, organic, plastic];
 }
 
 
 // Test Case 1
-recycle(
+console.log(recycle(
     [
         {
             type: 'rotten apples',
@@ -108,4 +136,4 @@ recycle(
             secondMaterial: 'paper'
         }
     ]
-)
+));
