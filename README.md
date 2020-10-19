@@ -1,2 +1,2 @@
 # practiceProblems
-Hub for my solutions to codewars and codingbat problems (Python/JS)
+Hub for my coding solutions (Python/JS)
