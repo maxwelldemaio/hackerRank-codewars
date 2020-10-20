@@ -47,9 +47,10 @@ class Solution:
                 break
         return result
 
+
 # Create solution instance
 l = Solution()
 
 # Tests
-print(l.twoSum([3,2,4], 6))
+print(l.twoSum([3, 2, 4], 6))
 print(l.twoSum([2, 7, 11, 15], 9))
