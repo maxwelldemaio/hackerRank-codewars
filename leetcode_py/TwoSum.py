@@ -44,6 +44,7 @@ class Solution:
             else:
                 # Compliment seen before, solution found [index of compliment, index of current num]
                 result = [compHash[num], index]
+                break
         return result
 
 # Create solution instance
