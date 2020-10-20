@@ -36,7 +36,16 @@ Only one valid answer exists.
 
 class Solution:
     def twoSum(self, nums, target):
-        return "just testing"
+        # Loop over each item
+        for i in range(len(nums)):
+            # Check every item's sum with other items
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    # Add index solutions
+                    targetList = [i, j]
+                    return targetList
+
+        
 
 # Create solution instance
 l = Solution()
