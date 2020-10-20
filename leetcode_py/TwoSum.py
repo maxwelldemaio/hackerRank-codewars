@@ -34,21 +34,35 @@ Constraints:
 Only one valid answer exists.
 """
 
-class Solution:
+# Brute force solution 
+class Solution1:
     def twoSum(self, nums, target):
-        # Loop over each item
+        # Loop over each item in nums
         for i in range(len(nums)):
             # Check every item's sum with other items
             for j in range(i + 1, len(nums)):
+                # If the sum of the current num and the other item equals target
                 if nums[i] + nums[j] == target:
-                    # Add index solutions
+                    # Add index of solutions to a list
                     targetList = [i, j]
                     return targetList
 
-        
+
+# Hashmap solution
+class Solution2:
+    def twoSum(self, nums, target):
+        compHash = {}
+        for index, num in enumerate(nums):
+            # Add compliment to hashmap
+            if compHash.get(num) is None:
+                compHash[target - num] = index
+            else:
+                # Solution found
+                result = [compHash[num], index]
+        return result
 
 # Create solution instance
-l = Solution()
+l = Solution2()
 
 # Tests
 print(l.twoSum([3,2,4], 6))
