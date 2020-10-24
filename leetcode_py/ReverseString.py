@@ -12,6 +12,11 @@ You may assume all the characters consist of printable ascii characters.
 Example 1:
 
 Input: ["h","e","l","l","o"]
+["o","l","l","e","h"]
+
+
+["o","l","l","e","h"]
+
 Output: ["o","l","l","e","h"]
 Example 2:
 
@@ -19,24 +24,27 @@ Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
 """
 
-# note, we can just use s.reverse() which is the same
-
 class Solution:
     def reverseString(self, s):
-        # Setup left and right pointer
+        # Setup the left and right pointer
         left, right = 0, len(s) - 1
-        # Left pointer will increment while right pointer decrements
+        # Left pointer will increment while right decrements
         while left < right:
             # Swap
             s[left], s[right] = s[right], s[left]
-            # Move in one
+            # Increment left pointer decrement right pointer
             left, right = left + 1, right - 1
-        print(s)
 
 
 # Create solution instance
 l = Solution()
 
+a = ["h", "i"]
+b = ['t', 'h', 'i', 's', 'i', 's', 'm', 'a', 'x']
+
 # Tests (Lists are mutuable so technically changes the original list)
-l.reverseString(["h", "e", "l", "l", "o"])
-l.reverseString(['t', 'h', 'i', 's', 'i', 's', 'm', 'a', 'x'])
+l.reverseString(a)
+l.reverseString(b)
+
+print(a)
+print(b)
