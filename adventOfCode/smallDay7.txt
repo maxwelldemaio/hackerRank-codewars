@@ -1,0 +1,6 @@
+light pink bags contain 1 blue bag, 1 light purple bag, 1 gray bag.
+gray bags contain 2 brown bags.
+brown bags contain 1 shiny gold bag.
+blue bags contain 1 light purple bag.
+red bags contain light purple bags, 1 shiny gold bag.
+light purple bags contain no other bags.
