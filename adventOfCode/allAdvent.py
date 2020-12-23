@@ -390,7 +390,7 @@ def day6p2():
 
 
 def main():
-    # Note: day 7, 9 are in a different python files
+    # Note: some days are in their own python files
     print(day9p1())
 
 if __name__ == '__main__':
