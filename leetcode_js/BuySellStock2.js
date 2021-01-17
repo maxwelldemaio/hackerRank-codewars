@@ -9,10 +9,10 @@ rather the loop adds up all potential gains. */
 
 var maxProfit = function (prices) {
     if (prices.length <= 1) {
-        return 0
+        return 0;
     }
 
-    let profit = 0
+    let profit = 0;
     // Sum all potential gains
     // Check all days on which we should have bought/sold
     for (var i = 1; i < prices.length; i++) {
