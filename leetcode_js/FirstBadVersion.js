@@ -19,7 +19,7 @@ function isBadVersion(num){
  * @param {function} isBadVersion()
  * @return {function}
  */
-var solution = function(isBadVersion) {
+var solution = function(api) {
     /**
      * @param {integer} n Total versions
      * @return {integer} The first bad version
@@ -51,4 +51,4 @@ var solution = function(isBadVersion) {
 };
 
 // Test cases
-console.log(solution(5));
+console.log(solution(isBadVersion)(5));
