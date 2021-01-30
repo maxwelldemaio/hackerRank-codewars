@@ -10,7 +10,7 @@
  * @return {void} Do not return anything, modify node in-place instead.
  */
 var deleteNode = function(node) {
-    // Set node's value to be equal to the next node's value
+    // Steal next node's value
     node.val = node.next.val;
     // Steal the next node's pointer
     node.next = node.next.next;

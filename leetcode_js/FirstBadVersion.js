@@ -25,27 +25,22 @@ var solution = function(api) {
      * @return {integer} The first bad version
      */
     return function(n) {
-        let start=0, end=n; 
-        let badFound = false;
-        
+        let start=1; 
+        let end=n; 
         while(start <= end){ 
-    
             // Find the mid index 
             let mid=Math.floor((start + end)/2); 
     
             if (isBadVersion(mid)){
                 // Bad version found (look left for more bads)
-                badFound = true;
                 end = mid - 1;
-            } else if (badFound && !isBadVersion(mid)) {
+            } else {
                 // If bad version already found, no bad now (look right)
-                start = mid + 1;
-            } else if (!badFound && !isBadVersion(mid)) {
                 // No bad version found yet, no bad now (look right)
-                start = mid + 1; 
-            }     
+                start = mid + 1;
+            }    
         }
-        // both end and start meet, return either
+        // Start is ontop of first bad instance
         return start;
     }
 };
